@@ -4,13 +4,23 @@
   
   
   <entry>
-    <title>Test</title>
-    <link href="/2025/06/29/test/"/>
-    <url>/2025/06/29/test/</url>
+    <title>ESP32 LVGL 无法显示示例代码中的图片</title>
+    <link href="/2025/07/02/ESP32-LVGL-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/"/>
+    <url>/2025/07/02/ESP32-LVGL-%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/</url>
     
-    <content type="html"><![CDATA[<table><thead><tr><th>文档名称</th><th>版本</th><th>作者</th><th>时间</th><th>备注</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>文档名称</th><th>版本</th><th>作者</th><th>时间</th><th>备注</th></tr></thead><tbody><tr><td>ESP32 LVGL 无法显示示例代码中的图片</td><td>1.0</td><td>PointerFly</td><td>2025&#x2F;07&#x2F;02</td><td></td></tr></tbody></table><p>使用环境：</p><ul><li>ESP-IDF:5.4.1</li><li>LVGL:9.3</li><li>显示IC:ST7789V</li><li>图像格式:RGB565</li></ul><p>运行示例代码如图所示，无法显示图片</p><p><img src="https://zhangguosheng.oss-cn-beijing.aliyuncs.com/image-20250702221418461.png" alt="image-20250702221418461"></p><p>正常图片如下图所示</p><p><img src="https://zhangguosheng.oss-cn-beijing.aliyuncs.com/image-20250702221307895.png" alt="image-20250702221307895"></p><p>根据下图配置打开LVGL的Log输出</p><p><img src="https://zhangguosheng.oss-cn-beijing.aliyuncs.com/image-20250702221550465.png" alt="image-20250702221550465"></p><p>烧录代码后提示</p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">lv_draw_sw_blend_image_to_rgb565: Not supported <span class="hljs-keyword">source</span> <span class="hljs-keyword">color</span> <span class="hljs-keyword">format</span><br></code></pre></td></tr></table></figure><p>去网上搜寻无果，</p><p>后查看这个图像是RGB888格式，查看了一下原来的配置，发现没有使能其他格式的支持，随后全部打开，最后图像成功显示。</p><p><img src="https://zhangguosheng.oss-cn-beijing.aliyuncs.com/image-20250702221738196.png" alt="image-20250702221738196"></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>ESP32</tag>
+      
+      <tag>LVGL</tag>
+      
+      <tag>图片</tag>
+      
+    </tags>
     
   </entry>
   
